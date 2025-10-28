@@ -49,7 +49,6 @@ export function Hero() {
                 variant="ghost"
                 size="icon"
                 asChild
-                className="hover-elevate active-elevate-2"
                 data-testid="link-github"
               >
                 <a href="https://github.com/sinchana-urs" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
@@ -60,7 +59,6 @@ export function Hero() {
                 variant="ghost"
                 size="icon"
                 asChild
-                className="hover-elevate active-elevate-2"
                 data-testid="link-linkedin"
               >
                 <a href="https://www.linkedin.com/in/sinchana-s-urs/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
@@ -71,7 +69,6 @@ export function Hero() {
                 variant="ghost"
                 size="icon"
                 asChild
-                className="hover-elevate active-elevate-2"
                 data-testid="link-email"
               >
                 <a href="mailto:sinchuurs17@gmail.com" aria-label="Email">

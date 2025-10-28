@@ -52,7 +52,7 @@ export function Projects() {
           {projects.map((project, index) => (
             <Card
               key={project.title}
-              className="flex flex-col hover-elevate active-elevate-2 transition-all duration-300 hover:scale-[1.02] animate-fade-in-up border-card-border overflow-visible"
+              className="flex flex-col hover-elevate active-elevate-2 transition-all duration-300 animate-fade-in-up border-card-border overflow-visible"
               style={{ animationDelay: `${index * 0.1}s` }}
               data-testid={`card-project-${index}`}
             >

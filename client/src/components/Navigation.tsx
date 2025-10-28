@@ -34,7 +34,7 @@ export function Navigation() {
         <div className="flex items-center justify-between">
           <button
             onClick={() => scrollToSection("hero")}
-            className="text-xl font-bold text-foreground hover-elevate px-4 py-2 rounded-md transition-all"
+            className="text-xl font-bold text-foreground hover-elevate active-elevate-2 px-4 py-2 rounded-md transition-all overflow-visible"
             data-testid="button-logo"
           >
             Sinchana
@@ -43,35 +43,35 @@ export function Navigation() {
           <div className="hidden md:flex items-center gap-8">
             <button
               onClick={() => scrollToSection("hero")}
-              className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors hover-elevate px-3 py-2 rounded-md"
+              className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors hover-elevate active-elevate-2 px-3 py-2 rounded-md overflow-visible"
               data-testid="link-home"
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection("about")}
-              className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors hover-elevate px-3 py-2 rounded-md"
+              className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors hover-elevate active-elevate-2 px-3 py-2 rounded-md overflow-visible"
               data-testid="link-about"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection("skills")}
-              className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors hover-elevate px-3 py-2 rounded-md"
+              className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors hover-elevate active-elevate-2 px-3 py-2 rounded-md overflow-visible"
               data-testid="link-skills"
             >
               Skills
             </button>
             <button
               onClick={() => scrollToSection("projects")}
-              className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors hover-elevate px-3 py-2 rounded-md"
+              className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors hover-elevate active-elevate-2 px-3 py-2 rounded-md overflow-visible"
               data-testid="link-projects"
             >
               Projects
             </button>
             <button
               onClick={() => scrollToSection("education")}
-              className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors hover-elevate px-3 py-2 rounded-md"
+              className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors hover-elevate active-elevate-2 px-3 py-2 rounded-md overflow-visible"
               data-testid="link-education"
             >
               Education

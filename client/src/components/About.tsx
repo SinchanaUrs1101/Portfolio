@@ -34,7 +34,7 @@ export function About() {
               </p>
 
               <div className="grid md:grid-cols-3 gap-6 mt-8">
-                <div className="flex items-start gap-3 hover-elevate p-4 rounded-lg transition-all">
+                <div className="flex items-start gap-3 hover-elevate active-elevate-2 p-4 rounded-lg transition-all overflow-visible">
                   <MapPin className="h-5 w-5 text-primary mt-1 shrink-0" />
                   <div>
                     <p className="font-medium mb-1">Location</p>
@@ -42,7 +42,7 @@ export function About() {
                   </div>
                 </div>
                 
-                <div className="flex items-start gap-3 hover-elevate p-4 rounded-lg transition-all">
+                <div className="flex items-start gap-3 hover-elevate active-elevate-2 p-4 rounded-lg transition-all overflow-visible">
                   <Phone className="h-5 w-5 text-primary mt-1 shrink-0" />
                   <div>
                     <p className="font-medium mb-1">Phone</p>
@@ -52,7 +52,7 @@ export function About() {
                   </div>
                 </div>
                 
-                <div className="flex items-start gap-3 hover-elevate p-4 rounded-lg transition-all">
+                <div className="flex items-start gap-3 hover-elevate active-elevate-2 p-4 rounded-lg transition-all overflow-visible">
                   <Mail className="h-5 w-5 text-primary mt-1 shrink-0" />
                   <div>
                     <p className="font-medium mb-1">Email</p>

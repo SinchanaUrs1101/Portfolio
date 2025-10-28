@@ -26,7 +26,6 @@ export function Footer() {
               variant="ghost"
               size="icon"
               asChild
-              className="hover-elevate active-elevate-2"
               data-testid="footer-link-github"
             >
               <a href="https://github.com/sinchana-urs" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
@@ -37,7 +36,6 @@ export function Footer() {
               variant="ghost"
               size="icon"
               asChild
-              className="hover-elevate active-elevate-2"
               data-testid="footer-link-linkedin"
             >
               <a href="https://www.linkedin.com/in/sinchana-s-urs/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
@@ -48,7 +46,6 @@ export function Footer() {
               variant="ghost"
               size="icon"
               asChild
-              className="hover-elevate active-elevate-2"
               data-testid="footer-link-email"
             >
               <a href="mailto:sinchuurs17@gmail.com" aria-label="Email">

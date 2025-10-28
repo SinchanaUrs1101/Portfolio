@@ -61,7 +61,7 @@ export function Skills() {
             return (
               <Card
                 key={category.title}
-                className="p-6 hover-elevate active-elevate-2 transition-all duration-300 hover:scale-105 animate-fade-in-up border-card-border"
+                className="p-6 hover-elevate active-elevate-2 transition-all duration-300 animate-fade-in-up border-card-border overflow-visible"
                 style={{ animationDelay: `${index * 0.1}s` }}
                 data-testid={`card-skill-${category.title.toLowerCase()}`}
               >
@@ -99,7 +99,7 @@ export function Skills() {
               <Badge
                 key={course}
                 variant="outline"
-                className="text-sm py-2 px-4 hover-elevate active-elevate-2"
+                className="text-sm"
                 data-testid={`badge-course-${course.toLowerCase().replace(/\s+/g, '-')}`}
               >
                 {course}
