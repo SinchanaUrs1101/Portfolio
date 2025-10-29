@@ -33,13 +33,15 @@ const certifications = [
     title: "Introduction to Artificial Intelligence",
     issuer: "Infosys Springboard",
     type: "Certification",
-    fileName: "/attached_assets/SINCHANA S URS - Certificate.pdf",
+    // use the provided attachment image for this certification
+    fileName: "info certifi.jpeg",
   },
   {
     title: "Machine Learning",
     issuer: "Unknown",
     type: "Online Certification",
-    fileName: "Machine Learning, ML.pdf",
+    // use the provided attachment image for the ML certification
+    fileName: "ML certifi.jpeg",
   },
 ];
 
@@ -128,7 +130,8 @@ export function Education() {
                         size="sm"
                         className="text-primary border-primary/50 hover:bg-primary hover:text-white"
                         onClick={() =>
-                          setSelectedCert(`/attached_assets/${encodeURIComponent(cert.fileName)}`)
+                          // server exposes attached assets at /assets/certs
+                          setSelectedCert(`/assets/certs/${encodeURIComponent(cert.fileName)}`)
                         }
                       >
                         <Eye className="w-4 h-4 mr-2" />
@@ -178,12 +181,23 @@ export function Education() {
             >
               <X className="w-6 h-6" />
             </button>
-            <div className="p-4">
-              <iframe
-                src={selectedCert}
-                className="w-full h-[80vh] rounded-lg"
-                title="Certificate Viewer"
-              ></iframe>
+            <div className="p-4 flex items-center justify-center">
+              {/* Render an <img> for common image types, fallback to an iframe for PDFs/other types */}
+              {selectedCert.match(/\.(png|jpe?g|gif|webp)$/i) ? (
+                // image viewer
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={selectedCert}
+                  alt="Certificate"
+                  className="w-full h-[80vh] object-contain rounded-lg"
+                />
+              ) : (
+                <iframe
+                  src={selectedCert}
+                  className="w-full h-[80vh] rounded-lg"
+                  title="Certificate Viewer"
+                />
+              )}
             </div>
           </div>
         </div>
