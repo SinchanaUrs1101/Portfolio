@@ -50,16 +50,21 @@ const achievements = [
     title: "Smart Hack - 2025",
     description: "Participated in Free and Open Source Software Hackathon",
     year: "2025",
+    // single image for Smart Hack
+    fileName: "smar certifi.jpeg",
   },
   {
     title: "Kannada Rajyotsava Dance Competition",
     description: "Winners",
     year: "2024",
+    // two files for the dance competition (certificate + picture)
+    fileName: ["kan raj certifi.jpeg", "kan raj pic.jpeg"],
   },
 ];
 
 export function Education() {
-  const [selectedCert, setSelectedCert] = useState<string | null>(null);
+  // selectedCert can be a single URL string or an array of URL strings
+  const [selectedCert, setSelectedCert] = useState<string | string[] | null>(null);
 
   return (
     <section id="education" className="py-24 relative overflow-hidden">
@@ -163,6 +168,29 @@ export function Education() {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground">{a.description}</p>
+                    {/* View certificate button for extracurricular achievements */}
+                    {a.fileName && (
+                      <div className="mt-4">
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="text-primary border-primary/50 hover:bg-primary hover:text-white"
+                          onClick={() => {
+                            // support single filename or array of filenames
+                            if (Array.isArray(a.fileName)) {
+                              setSelectedCert(
+                                a.fileName.map((name) => `/assets/certs/${encodeURIComponent(name)}`),
+                              );
+                            } else {
+                              setSelectedCert(`/assets/certs/${encodeURIComponent(a.fileName)}`);
+                            }
+                          }}
+                        >
+                          <Eye className="w-4 h-4 mr-2" />
+                          View Certificate
+                        </Button>
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
               ))}
@@ -182,21 +210,44 @@ export function Education() {
               <X className="w-6 h-6" />
             </button>
             <div className="p-4 flex items-center justify-center">
-              {/* Render an <img> for common image types, fallback to an iframe for PDFs/other types */}
-              {selectedCert.match(/\.(png|jpe?g|gif|webp)$/i) ? (
-                // image viewer
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={selectedCert}
-                  alt="Certificate"
-                  className="w-full h-[80vh] object-contain rounded-lg"
-                />
+              {/* Support single or multiple selected certificates */}
+              {Array.isArray(selectedCert) ? (
+                <div className="w-full h-[80vh] grid grid-cols-1 md:grid-cols-2 gap-4 items-start overflow-auto">
+                  {selectedCert.map((src, idx) =>
+                    src.match(/\.(png|jpe?g|gif|webp)$/i) ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        key={idx}
+                        src={src}
+                        alt={`Certificate ${idx + 1}`}
+                        className="w-full h-full object-contain rounded-lg"
+                      />
+                    ) : (
+                      <iframe
+                        key={idx}
+                        src={src}
+                        className="w-full h-full rounded-lg"
+                        title={`Certificate ${idx + 1}`}
+                      />
+                    ),
+                  )}
+                </div>
               ) : (
-                <iframe
-                  src={selectedCert}
-                  className="w-full h-[80vh] rounded-lg"
-                  title="Certificate Viewer"
-                />
+                // single selectedCert (string)
+                (selectedCert.match(/\.(png|jpe?g|gif|webp)$/i) ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={selectedCert}
+                    alt="Certificate"
+                    className="w-full h-[80vh] object-contain rounded-lg"
+                  />
+                ) : (
+                  <iframe
+                    src={selectedCert}
+                    className="w-full h-[80vh] rounded-lg"
+                    title="Certificate Viewer"
+                  />
+                ))
               )}
             </div>
           </div>
